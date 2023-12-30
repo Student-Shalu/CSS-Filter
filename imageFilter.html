@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Image Filter</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            background-color: #191919;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .container h1 {
+            color: white;
+            font-size: 2.2rem;
+        }
+
+        .container span {
+            color: aqua;
+        }
+
+        .container .image {
+            margin: 30px auto;
+            text-align: center;
+            background-color: white;
+            width: 500px;
+            padding: 20px;
+        }
+
+        /* Style the tab */
+        .tab {
+            background-color: transparent;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+        /* Style the buttons that are used to open the tab content */
+        .tab button {
+            display: block;
+            background-color: #750E21;
+            color: white;
+            padding: 10px 16px;
+            width: 300px;
+            text-align: center;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CSS <span>Image Filter</span></h1>
+        <div class="image">
+            <img src="bird.jpg" alt="" width="100%" height="300px" id="image">
+        </div>
+
+
+        <div class="tab">
+            <button class="tablinks" onclick="defaultFilter()">Default</button>
+            <button class="tablinks" onclick="blurFilter()">Blur</button>
+            <button class="tablinks" onclick="grayscaleFilter()">Grayscale</button>
+            <button class="tablinks" onclick="brightnessFilter()">Brightness</button>
+            <button class="tablinks" onclick="contrastFilter()">Contrast</button>
+            <button class="tablinks" onclick="saturateFilter()">Saturation</button>
+            <button class="tablinks" onclick="opacityFilter()">Opacity</button>
+            <button class="tablinks" onclick="hueFilter()">Hue-Rotate</button>
+            <button class="tablinks" onclick="dropFilter()">Drop-Shadow</button>
+            <button class="tablinks" onclick="invertFilter()">Invert</button>
+        </div>
+    </div>
+    <script>
+
+        const image = document.getElementById("image");
+        function blurFilter() {
+            image.style.filter = "blur(1px)";
+        }
+        function grayscaleFilter() {
+            image.style.filter = "grayscale(100%)";
+        }
+        function brightnessFilter() {
+            image.style.filter = " brightness(0.6)";
+        }
+        function contrastFilter() {
+            image.style.filter = "contrast(200%)";
+        }
+        function saturateFilter() {
+            image.style.filter = "saturate(30%)";
+        }
+        function opacityFilter() {
+            image.style.filter = "opacity(50%)";
+        }
+        function hueFilter() {
+            image.style.filter = "hue-rotate(90deg)";
+        }
+        function dropFilter() {
+            image.style.filter = "Drop-Shadow(16px 16px 20px #E3651D)";
+        }
+        function invertFilter() {
+            image.style.filter = "invert(100%)";
+        }
+        function defaultFilter() {
+            image.style.filter = "none";
+        }
+
+    </script>
+</body>
+
+</html>
